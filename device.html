@@ -11,12 +11,22 @@
     {
       analytics.identify(document.getElementById('userId'));
     }
+    
+    function sendTrack()
+    {
+      analytics.track(document.getElementById('event_name'));
+    }
+
     </script>
 
 hey
 
   <button onclick="sendIdentify()">identify</button>
   <input type="text" id="userid" value="device_@segment.com">
+
+  <button onclick="sendTrack()">identify</button>
+  <input type="text" id="event_name" value="Device Event">
+
   
   <a href="https://app.segment.com/demo-niels-test/sources/gh_amplitude_device/debugger">Debugger</a>
   <a href="https://analytics.amplitude.com/destination-actions/activity">Amplitude</a>
