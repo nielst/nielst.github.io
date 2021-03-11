@@ -9,12 +9,12 @@
     
     function sendIdentify()
     {
-      analytics.identify(document.getElementById('userId'));
+      analytics.identify(document.getElementById('userId').value);
     }
     
     function sendTrack()
     {
-      analytics.track(document.getElementById('event_name'));
+      analytics.track(document.getElementById('event_name').value);
     }
 
     </script>
