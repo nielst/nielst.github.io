@@ -6,7 +6,12 @@
   analytics.load("IvkIuoCJfQd5q6PqZQXObD5THHUshoVx");
   analytics.page();
   }}();
+  </script>
   
+  <script src="https://ajs-next-integrations.s3-us-west-2.amazonaws.com/fab-5/amplitude-plugins.js" /></script>
+
+  <script>
+
     function sendIdentify()
     {
       analytics.identify(document.getElementById('userid').value);
@@ -17,6 +22,23 @@
       analytics.track(document.getElementById('eventname').value);
     }
 
+    const amplitude = window['amplitude-pluginsDestination']
+    // these will come from settings
+    const subscriptions = [{
+      partnerAction: 'sessionId',
+      name: 'SessionId',
+      enabled: true,
+      subscribe: 'type = "track"',
+      mapping: {}
+    }]
+    window.analytics.ready(async () => {
+      // this part will happen in ajs-next's remote plugin loader
+      const plugins = amplitude({ subscriptions })
+      for (const plugin of plugins) {
+        await window.analytics.register(plugin)
+      }
+    })
+    
     </script>
   
     <style>
