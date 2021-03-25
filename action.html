@@ -1,0 +1,44 @@
+<html>
+
+<body>
+  <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="BFrFS9bWBAbm6E7c1M6iHOjahhQAzHEv";analytics.SNIPPET_VERSION="4.13.2";
+  analytics.load("IvkIuoCJfQd5q6PqZQXObD5THHUshoVx");
+  analytics.page();
+  }}();
+    
+    function sendIdentify()
+    {
+      analytics.identify(document.getElementById('userid').value);
+    }
+    
+    function sendTrack()
+    {
+      analytics.track(document.getElementById('eventname').value);
+    }
+
+    </script>
+  
+    <style>
+      div {margin:20px}
+    </style>
+<h2>Actions Hybrid Amplitude Test</h2>
+  
+<div>
+  <button onclick="sendIdentify()">identify</button>
+  <input type="text" id="userid" value="hybrid_@segment.com">
+</div>
+
+<div>
+  <button onclick="sendTrack()">track</button>
+  <input type="text" id="eventname" value="Hybrid Event">
+</div>
+
+<div>  
+  <a href="https://app.segment.com/demo-niels-test/sources/gh_amplitude_actions/debugger">Debugger</a>
+  <a href="https://analytics.amplitude.com/destination-actions/activity">Amplitude</a>
+</div>
+  
+</body>
+
+</html>
