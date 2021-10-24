@@ -18,6 +18,11 @@
       analytics.track(document.getElementById('eventname').value);
     }
 
+    function sendPage()
+    {
+      analytics.page(document.getElementById('category').value, document.getElementById('pagename').value);
+    }
+
     </script>
   
     <style>
@@ -35,6 +40,13 @@
   <input type="text" id="eventname" value="Device Event">
 </div>
 
+<div>
+  <button onclick="sendTrack()">page</button>
+  <input type="text" id="pagename" value="Nike Air Force 1 '07">
+  <input type="text" id="category" value="Product Page">
+</div>
+
+  
 <div>  
   <a href="https://app.segment.com/demo-niels-test/sources/gh_amplitude_device/debugger">Debugger</a>
   <a href="https://analytics.amplitude.com/destination-actions/activity">Amplitude</a>
